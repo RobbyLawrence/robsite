@@ -12,9 +12,9 @@ title = "Robby Lawrence"
 
 [params.author]
   name = "Robby Lawrence"
-  image = "img/robbby.jpeg"
+  image = "img/robby.jpeg"
   headline = "Math & Optimization"
-  bio = "Writing about math, optimization, and whatever else I'm working on."
+  bio = "Living, laughing, coding"
   links = [
     { github = "https://github.com/robbylawrence" },
   ]

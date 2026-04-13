@@ -33,13 +33,13 @@
     />
     <xhtml:link
       rel="alternate"
-      hreflang="es"
-      href="http://localhost:1313/es/authors/"
+      hreflang="pt-br"
+      href="http://localhost:1313/pt-br/authors/"
     />
     <xhtml:link
       rel="alternate"
-      hreflang="pt-br"
-      href="http://localhost:1313/pt-br/authors/"
+      hreflang="es"
+      href="http://localhost:1313/es/authors/"
     />
     <xhtml:link
       rel="alternate"
@@ -133,13 +133,13 @@
     />
     <xhtml:link
       rel="alternate"
-      hreflang="pt-br"
-      href="http://localhost:1313/pt-br/categories/"
+      hreflang="es"
+      href="http://localhost:1313/es/categories/"
     />
     <xhtml:link
       rel="alternate"
-      hreflang="es"
-      href="http://localhost:1313/es/categories/"
+      hreflang="pt-br"
+      href="http://localhost:1313/pt-br/categories/"
     />
     <xhtml:link
       rel="alternate"
@@ -183,13 +183,13 @@
     />
     <xhtml:link
       rel="alternate"
-      hreflang="pt-br"
-      href="http://localhost:1313/pt-br/series/"
+      hreflang="es"
+      href="http://localhost:1313/es/series/"
     />
     <xhtml:link
       rel="alternate"
-      hreflang="es"
-      href="http://localhost:1313/es/series/"
+      hreflang="pt-br"
+      href="http://localhost:1313/pt-br/series/"
     />
     <xhtml:link
       rel="alternate"
