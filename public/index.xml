@@ -10,12 +10,12 @@
     <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Hello World</title>
+      <title>Hello World!</title>
       <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>&lt;p&gt;Welcome to my site. I&amp;rsquo;ll be writing here about math, optimization, and whatever else I&amp;rsquo;m working on.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Welcome to my site! I&amp;rsquo;ll be writing here about math, optimization, and whatever else I&amp;rsquo;m working on. This website is the product of continuous prodding from both my close friend &lt;a href=&#34;https://mmferrari.com&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Matthew Ferrari&lt;/a&gt; and colleague/wordsmith &lt;a href=&#34;https://lucaslhunter.com/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Lucas Hunter&lt;/a&gt;.&lt;/p&gt;</description>
       
     </item>
     
