@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blowfish</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Blowfish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>nuno@n9o.xyz (Blowfish)</managingEditor>
+    <webMaster>nuno@n9o.xyz (Blowfish)</webMaster>
+    <copyright>© 2026 Blowfish</copyright>
+    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <author>nuno@n9o.xyz (Blowfish)</author>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>&lt;p&gt;Welcome to my site. I&amp;rsquo;ll be writing here about math, optimization, and whatever else I&amp;rsquo;m working on.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
