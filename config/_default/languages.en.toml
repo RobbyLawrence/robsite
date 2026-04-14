@@ -17,4 +17,6 @@ title = "Robby Lawrence"
   bio = "Living, laughing, coding"
   links = [
     { github = "https://github.com/robbylawrence" },
+    { linkedin = "https://www.linkedin.com/in/robert-lawrence-33b1002b8/" },
+    { instagram = "https://www.instagram.com/robertwesleylawrence3" },
   ]
