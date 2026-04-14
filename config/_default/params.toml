@@ -64,7 +64,7 @@ fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384",
 [article]
   showDate = false
   showViews = true
-  showLikes = false
+  showLikes = true
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
