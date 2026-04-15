@@ -6,7 +6,7 @@
 
 [[main]]
   name = "Resume"
-  url = "/RobertLawrenceResume.pdf"
+  url = "/resume.pdf"
   weight = 20
 
 # -- Footer Menu --
