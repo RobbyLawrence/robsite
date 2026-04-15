@@ -2,6 +2,9 @@
 title: "Home"
 ---
 
+Currently, I'm working on building a custom linear classifier for digits using MNIST as a dataset. Reach out if you'd like to hear more!
+
+
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; max-width: 700px; margin: 0 auto;">
   <img src="img/theatre.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
   <img src="img/family.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
