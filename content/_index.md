@@ -1,6 +1,7 @@
 ---
 title: "Home"
 ---
+My name is Robby, and I'm a double major in Honors: Mathematics and Computer Science at the University of Tennessee, Knoxville. My research interests include numerical linear algebra and linear optimization.
 
 Currently, I'm working on building a custom linear classifier for digits using MNIST as a dataset. Reach out if you'd like to hear more!
 

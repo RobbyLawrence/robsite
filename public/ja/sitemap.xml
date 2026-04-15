@@ -233,13 +233,13 @@
     />
     <xhtml:link
       rel="alternate"
-      hreflang="es"
-      href="http://localhost:1313/es/tags/"
+      hreflang="pt-br"
+      href="http://localhost:1313/pt-br/tags/"
     />
     <xhtml:link
       rel="alternate"
-      hreflang="pt-br"
-      href="http://localhost:1313/pt-br/tags/"
+      hreflang="es"
+      href="http://localhost:1313/es/tags/"
     />
     <xhtml:link
       rel="alternate"

@@ -4,6 +4,11 @@
   pageRef = "posts"
   weight = 10
 
+[[main]]
+  name = "Resume"
+  url = "/RobertLawrenceResume.pdf"
+  weight = 20
+
 # -- Footer Menu --
 [[footer]]
   name = "Tags"
