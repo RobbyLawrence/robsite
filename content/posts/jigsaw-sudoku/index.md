@@ -71,3 +71,5 @@ I won't lie to you... sitting on my beanbag writing the C++ implementation of th
 Gurobi eased my worries. The presolve alone took care of the entire system, presolving $348$ rows and $729$ columns in less than a hundredth of a second.
 
 Another hypothetical win for the linear programming community!
+
+Claude modified this solver to run with GLPK so I could deploy it. Check out an online version [here](/jigsaw).
