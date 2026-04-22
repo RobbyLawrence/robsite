@@ -4,10 +4,13 @@
   pageRef = "posts"
   weight = 10
 
+# resume
 [[main]]
   name = "Resume"
   url = "/resume.pdf"
   weight = 20
+  [main.params]
+    target = "_blank"
 
 # -- Footer Menu --
 [[footer]]
