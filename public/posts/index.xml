@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2026 Robby Lawrence</copyright>
-    <lastBuildDate>Mon, 13 Apr 2026 15:15:12 -0400</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 May 2026 09:43:18 -0400</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Stochastic Programming</title>
+      <link>http://localhost:1313/posts/stochastic-programming/</link>
+      <pubDate>Mon, 04 May 2026 09:43:18 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/stochastic-programming/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Jigsaw Sudoku</title>
