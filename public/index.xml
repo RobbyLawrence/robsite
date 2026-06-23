@@ -1,53 +1,371 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Home on Robby Lawrence</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Home on Robby Lawrence</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>© 2026 Robby Lawrence</copyright>
-    <lastBuildDate>Mon, 04 May 2026 09:43:18 -0400</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Stochastic Programming</title>
-      <link>http://localhost:1313/posts/stochastic-programming/</link>
-      <pubDate>Mon, 04 May 2026 09:43:18 -0400</pubDate>
-      
-      <guid>http://localhost:1313/posts/stochastic-programming/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Jigsaw Sudoku</title>
-      <link>http://localhost:1313/posts/jigsaw-sudoku/</link>
-      <pubDate>Mon, 13 Apr 2026 15:15:12 -0400</pubDate>
-      
-      <guid>http://localhost:1313/posts/jigsaw-sudoku/</guid>
-      <description>&lt;h3 class=&#34;relative group&#34;&gt;Lucas, the Sudoku Wizard&#xA;    &lt;div id=&#34;lucas-the-sudoku-wizard&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#lucas-the-sudoku-wizard&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;The path to knowledge often takes many twists and turns. I encountered one of these in the form of a challenge, offered to me by colleague and friend Lucas Hunter.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Hello World!</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
-      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>&lt;p&gt;Welcome to my site! I&amp;rsquo;ll be writing here about math, optimization, and whatever else I&amp;rsquo;m working on. This website is the product of continuous prodding from both my close friend &lt;a href=&#34;https://mmferrari.com&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Matthew Ferrari&lt;/a&gt; and colleague/wordsmith &lt;a href=&#34;https://lucaslhunter.com/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Lucas Hunter&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Jigsaw Sudoku Solver</title>
-      <link>http://localhost:1313/jigsaw/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/jigsaw/</guid>
-      <description>&lt;p&gt;A jigsaw Sudoku solver using &lt;a href=&#34;https://www.gnu.org/software/glpk/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;GLPK&lt;/a&gt;. Paint the subgrid regions, fill in the known values, and then solve.&lt;/p&gt;&#xA;&lt;div id=&#34;jigsaw-app&#34; style=&#34;font-family: inherit; max-width: 600px; margin: 0 auto;&#34;&gt;&#xA;  &lt;div style=&#34;display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid #e5e7eb;&#34;&gt;&#xA;    &lt;button id=&#34;tab-subgrid&#34; onclick=&#34;setMode(&#39;subgrid&#39;)&#34;&#xA;      style=&#34;padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #3b82f6; border-bottom: 2px solid #3b82f6; margin-bottom: -2px;&#34;&gt;&#xA;      1. Paint Subgrids&#xA;    &lt;/button&gt;&#xA;    &lt;button id=&#34;tab-values&#34; onclick=&#34;setMode(&#39;values&#39;)&#34;&#xA;      style=&#34;padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -2px;&#34;&gt;&#xA;      2. Enter Values&#xA;    &lt;/button&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;div id=&#34;palette&#34; style=&#34;display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center;&#34;&gt;&#xA;    &lt;span style=&#34;font-size: 13px; color: #6b7280; margin-right: 4px;&#34;&gt;Subgrid:&lt;/span&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- Subgrid counts --&gt;&#xA;  &lt;div id=&#34;counts&#34; style=&#34;display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-size: 12px;&#34;&gt;&lt;/div&gt;&#xA;  &lt;!-- Instructions line --&gt;&#xA;  &lt;div id=&#34;instructions&#34; style=&#34;font-size: 13px; color: #6b7280; margin-bottom: 10px;&#34;&gt;&#xA;    Select a color, then click or drag cells to assign them to that subgrid. Each subgrid needs exactly 9 cells.&#xA;  &lt;/div&gt;&#xA;  &lt;!-- Grid --&gt;&#xA;  &lt;div id=&#34;grid&#34; style=&#34;display: inline-grid; grid-template-columns: repeat(9, 1fr); gap: 0; border: 3px solid #1f2937; border-radius: 4px; user-select: none; margin-bottom: 16px;&#34;&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- Controls --&gt;&#xA;  &lt;div style=&#34;display: flex; gap: 10px; align-items: center; margin-bottom: 16px;&#34;&gt;&#xA;    &lt;button onclick=&#34;resetAll()&#34;&#xA;      style=&#34;padding: 8px 16px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 14px;&#34;&gt;&#xA;      Reset&#xA;    &lt;/button&gt;&#xA;    &lt;button onclick=&#34;resetValues()&#34;&#xA;      style=&#34;padding: 8px 16px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 14px;&#34;&gt;&#xA;      Clear Values&#xA;    &lt;/button&gt;&#xA;    &lt;button id=&#34;solve-btn&#34; onclick=&#34;solve()&#34;&#xA;      style=&#34;padding: 8px 20px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; opacity: 0.4; pointer-events: none;&#34;&gt;&#xA;      Solve&#xA;    &lt;/button&gt;&#xA;    &lt;span id=&#34;status&#34; style=&#34;font-size: 13px; color: #6b7280;&#34;&gt;&lt;/span&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;!-- Result --&gt;&#xA;  &lt;div id=&#34;result-section&#34; style=&#34;display: none;&#34;&gt;&#xA;    &lt;div style=&#34;font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #1f2937;&#34;&gt;Solution&lt;/div&gt;&#xA;    &lt;div id=&#34;result-grid&#34; style=&#34;display: inline-grid; grid-template-columns: repeat(9, 1fr); gap: 0; border: 3px solid #1f2937; border-radius: 4px; margin-bottom: 8px;&#34;&gt;&lt;/div&gt;&#xA;    &lt;div style=&#34;font-size: 12px; color: #6b7280;&#34;&gt;Bold = given &amp;nbsp;·&amp;nbsp; Regular = solved&lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;script&gt;&#xA;(function() {&#xA;&#xA;const COLORS = [&#xA;  { bg: &#39;#fecaca&#39;, border: &#39;#dc2626&#39;, text: &#39;#7f1d1d&#39;, name: &#39;Red&#39;    },&#xA;  { bg: &#39;#fed7aa&#39;, border: &#39;#ea580c&#39;, text: &#39;#7c2d12&#39;, name: &#39;Orange&#39; },&#xA;  { bg: &#39;#fef08a&#39;, border: &#39;#ca8a04&#39;, text: &#39;#713f12&#39;, name: &#39;Yellow&#39; },&#xA;  { bg: &#39;#bbf7d0&#39;, border: &#39;#16a34a&#39;, text: &#39;#14532d&#39;, name: &#39;Green&#39;  },&#xA;  { bg: &#39;#99f6e4&#39;, border: &#39;#0d9488&#39;, text: &#39;#134e4a&#39;, name: &#39;Teal&#39;   },&#xA;  { bg: &#39;#bfdbfe&#39;, border: &#39;#2563eb&#39;, text: &#39;#1e3a8a&#39;, name: &#39;Blue&#39;   },&#xA;  { bg: &#39;#ddd6fe&#39;, border: &#39;#7c3aed&#39;, text: &#39;#4c1d95&#39;, name: &#39;Purple&#39; },&#xA;  { bg: &#39;#fbcfe8&#39;, border: &#39;#db2777&#39;, text: &#39;#831843&#39;, name: &#39;Pink&#39;   },&#xA;  { bg: &#39;#d1d5db&#39;, border: &#39;#4b5563&#39;, text: &#39;#111827&#39;, name: &#39;Gray&#39;   },&#xA;];&#xA;&#xA;const CELL_SIZE = 52;&#xA;const API_URL = &#39;https://robby-jigsaw.fly.dev&#39;;&#xA;&#xA;let mode = &#39;subgrid&#39;;&#xA;let selectedSubgrid = 0;&#xA;let subgridMap = Array.from({length: 9}, () =&gt; Array(9).fill(-1));&#xA;let valueMap   = Array.from({length: 9}, () =&gt; Array(9).fill(0));&#xA;let solutionMap = null;&#xA;let isPainting = false;&#xA;let selectedCell = null; // [r, c]&#xA;&#xA;// ── Build palette ────────────────────────────────────────────────────────────&#xA;&#xA;const palette = document.getElementById(&#39;palette&#39;);&#xA;COLORS.forEach((c, i) =&gt; {&#xA;  const btn = document.createElement(&#39;button&#39;);&#xA;  btn.id = `palette-${i}`;&#xA;  btn.title = c.name;&#xA;  btn.style.cssText = `&#xA;    width: 32px; height: 32px; border-radius: 6px; cursor: pointer;&#xA;    background: ${c.bg}; border: 3px solid ${i === 0 ? c.border : &#39;#d1d5db&#39;};&#xA;    transition: border-color 0.1s;&#xA;  `;&#xA;  btn.onclick = () =&gt; selectSubgrid(i);&#xA;  palette.appendChild(btn);&#xA;});&#xA;&#xA;// ── Build counts ─────────────────────────────────────────────────────────────&#xA;&#xA;function renderCounts() {&#xA;  const counts = Array(9).fill(0);&#xA;  for (let r = 0; r &lt; 9; r++)&#xA;    for (let c = 0; c &lt; 9; c++)&#xA;      if (subgridMap[r][c] &gt;= 0) counts[subgridMap[r][c]]++;&#xA;&#xA;  const el = document.getElementById(&#39;counts&#39;);&#xA;  el.innerHTML = &#39;&#39;;&#xA;  COLORS.forEach((col, i) =&gt; {&#xA;    const span = document.createElement(&#39;span&#39;);&#xA;    span.style.cssText = `&#xA;      display: inline-flex; align-items: center; gap: 4px;&#xA;      background: ${col.bg}; border: 1px solid ${col.border};&#xA;      border-radius: 4px; padding: 2px 6px; color: ${col.text};&#xA;    `;&#xA;    const ok = counts[i] === 9;&#xA;    span.innerHTML = `&lt;span style=&#34;font-size:11px;&#34;&gt;${col.name}&lt;/span&gt;&#xA;      &lt;span style=&#34;font-weight:700; color:${ok ? &#39;#16a34a&#39; : counts[i] &gt; 9 ? &#39;#dc2626&#39; : col.text};&#34;&gt;&#xA;        ${counts[i]}/9&#xA;      &lt;/span&gt;`;&#xA;    el.appendChild(span);&#xA;  });&#xA;&#xA;  updateSolveButton(counts);&#xA;}&#xA;&#xA;function updateSolveButton(counts) {&#xA;  const allGood = counts.every(c =&gt; c === 9);&#xA;  const btn = document.getElementById(&#39;solve-btn&#39;);&#xA;  btn.style.opacity = allGood ? &#39;1&#39; : &#39;0.4&#39;;&#xA;  btn.style.pointerEvents = allGood ? &#39;auto&#39; : &#39;none&#39;;&#xA;}&#xA;&#xA;// ── Build grid ───────────────────────────────────────────────────────────────&#xA;&#xA;const gridEl = document.getElementById(&#39;grid&#39;);&#xA;&#xA;function buildGrid() {&#xA;  gridEl.innerHTML = &#39;&#39;;&#xA;  for (let r = 0; r &lt; 9; r++) {&#xA;    for (let c = 0; c &lt; 9; c++) {&#xA;      const cell = document.createElement(&#39;div&#39;);&#xA;      cell.id = `cell-${r}-${c}`;&#xA;      cell.style.cssText = `&#xA;        width: ${CELL_SIZE}px; height: ${CELL_SIZE}px;&#xA;        display: flex; align-items: center; justify-content: center;&#xA;        font-size: 20px; font-weight: 600;&#xA;        cursor: pointer; box-sizing: border-box;&#xA;        transition: filter 0.1s;&#xA;      `;&#xA;      cell.addEventListener(&#39;mousedown&#39;, e =&gt; { e.preventDefault(); onCellDown(r, c); });&#xA;      cell.addEventListener(&#39;mouseenter&#39;, () =&gt; { if (isPainting) onCellDown(r, c); });&#xA;      cell.addEventListener(&#39;click&#39;, () =&gt; onCellClick(r, c));&#xA;      gridEl.appendChild(cell);&#xA;    }&#xA;  }&#xA;  renderGrid();&#xA;}&#xA;&#xA;function renderGrid() {&#xA;  for (let r = 0; r &lt; 9; r++) {&#xA;    for (let c = 0; c &lt; 9; c++) {&#xA;      const cell = document.getElementById(`cell-${r}-${c}`);&#xA;      const sg = subgridMap[r][c];&#xA;      const val = valueMap[r][c];&#xA;      const isSelected = selectedCell &amp;&amp; selectedCell[0] === r &amp;&amp; selectedCell[1] === c;&#xA;&#xA;      // Background&#xA;      const bg = sg &gt;= 0 ? COLORS[sg].bg : &#39;#f9fafb&#39;;&#xA;      cell.style.background = isSelected ? &#39;#93c5fd&#39; : bg;&#xA;&#xA;      // Borders — thick where subgrid changes, thin within same subgrid&#xA;      const bt = r === 0 ? &#39;2px&#39; : (subgridMap[r-1][c] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const bb = r === 8 ? &#39;0&#39;   : (subgridMap[r+1][c] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const bl = c === 0 ? &#39;2px&#39; : (subgridMap[r][c-1] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const br = c === 8 ? &#39;0&#39;   : (subgridMap[r][c+1] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const borderColor = sg &gt;= 0 ? COLORS[sg].border : &#39;#9ca3af&#39;;&#xA;      cell.style.borderTop    = `${bt} solid ${borderColor}`;&#xA;      cell.style.borderBottom = `${bb} solid ${borderColor}`;&#xA;      cell.style.borderLeft   = `${bl} solid ${borderColor}`;&#xA;      cell.style.borderRight  = `${br} solid ${borderColor}`;&#xA;&#xA;      // Value&#xA;      if (mode === &#39;values&#39; || mode === &#39;subgrid&#39;) {&#xA;        cell.textContent = val &gt; 0 ? val : &#39;&#39;;&#xA;        cell.style.color = sg &gt;= 0 ? COLORS[sg].text : &#39;#374151&#39;;&#xA;      }&#xA;    }&#xA;  }&#xA;}&#xA;&#xA;// ── Interaction ──────────────────────────────────────────────────────────────&#xA;&#xA;document.addEventListener(&#39;mouseup&#39;, () =&gt; { isPainting = false; });&#xA;&#xA;function onCellDown(r, c) {&#xA;  if (mode !== &#39;subgrid&#39;) return;&#xA;  isPainting = true;&#xA;  subgridMap[r][c] = selectedSubgrid;&#xA;  solutionMap = null;&#xA;  document.getElementById(&#39;result-section&#39;).style.display = &#39;none&#39;;&#xA;  renderGrid();&#xA;  renderCounts();&#xA;}&#xA;&#xA;function onCellClick(r, c) {&#xA;  if (mode !== &#39;values&#39;) return;&#xA;  selectedCell = [r, c];&#xA;  renderGrid();&#xA;}&#xA;&#xA;document.addEventListener(&#39;keydown&#39;, e =&gt; {&#xA;  if (mode !== &#39;values&#39; || !selectedCell) return;&#xA;  const [r, c] = selectedCell;&#xA;&#xA;  if (e.key &gt;= &#39;1&#39; &amp;&amp; e.key &lt;= &#39;9&#39;) {&#xA;    valueMap[r][c] = parseInt(e.key);&#xA;    solutionMap = null;&#xA;    document.getElementById(&#39;result-section&#39;).style.display = &#39;none&#39;;&#xA;    renderGrid();&#xA;  } else if (e.key === &#39;Backspace&#39; || e.key === &#39;Delete&#39; || e.key === &#39;0&#39;) {&#xA;    valueMap[r][c] = 0;&#xA;    solutionMap = null;&#xA;    document.getElementById(&#39;result-section&#39;).style.display = &#39;none&#39;;&#xA;    renderGrid();&#xA;  } else if (e.key === &#39;ArrowRight&#39;) { selectedCell = [r, Math.min(8, c+1)]; renderGrid(); }&#xA;  else if (e.key === &#39;ArrowLeft&#39;)    { selectedCell = [r, Math.max(0, c-1)]; renderGrid(); }&#xA;  else if (e.key === &#39;ArrowDown&#39;)    { selectedCell = [Math.min(8, r+1), c]; renderGrid(); }&#xA;  else if (e.key === &#39;ArrowUp&#39;)      { selectedCell = [Math.max(0, r-1), c]; renderGrid(); }&#xA;});&#xA;&#xA;// ── Mode &amp; subgrid selection ─────────────────────────────────────────────────&#xA;&#xA;function selectSubgrid(i) {&#xA;  selectedSubgrid = i;&#xA;  COLORS.forEach((c, idx) =&gt; {&#xA;    const btn = document.getElementById(`palette-${idx}`);&#xA;    btn.style.border = `3px solid ${idx === i ? c.border : &#39;#d1d5db&#39;}`;&#xA;    btn.style.transform = idx === i ? &#39;scale(1.15)&#39; : &#39;scale(1)&#39;;&#xA;  });&#xA;}&#xA;&#xA;function setMode(m) {&#xA;  mode = m;&#xA;  selectedCell = null;&#xA;&#xA;  document.getElementById(&#39;tab-subgrid&#39;).style.color      = m === &#39;subgrid&#39; ? &#39;#3b82f6&#39; : &#39;#6b7280&#39;;&#xA;  document.getElementById(&#39;tab-subgrid&#39;).style.borderBottom = m === &#39;subgrid&#39; ? &#39;2px solid #3b82f6&#39; : &#39;2px solid transparent&#39;;&#xA;  document.getElementById(&#39;tab-values&#39;).style.color       = m === &#39;values&#39;  ? &#39;#3b82f6&#39; : &#39;#6b7280&#39;;&#xA;  document.getElementById(&#39;tab-values&#39;).style.borderBottom  = m === &#39;values&#39;  ? &#39;2px solid #3b82f6&#39; : &#39;2px solid transparent&#39;;&#xA;&#xA;  document.getElementById(&#39;palette&#39;).style.display  = m === &#39;subgrid&#39; ? &#39;flex&#39; : &#39;none&#39;;&#xA;  document.getElementById(&#39;counts&#39;).style.display   = m === &#39;subgrid&#39; ? &#39;flex&#39; : &#39;none&#39;;&#xA;  document.getElementById(&#39;instructions&#39;).textContent = m === &#39;subgrid&#39;&#xA;    ? &#39;Select a color, then click or drag cells to assign them to that subgrid. Each subgrid needs exactly 9 cells.&#39;&#xA;    : &#39;Click a cell, then type a digit (1–9). Use arrow keys to navigate. Leave unknown cells blank.&#39;;&#xA;&#xA;  renderGrid();&#xA;}&#xA;&#xA;// ── Solve ────────────────────────────────────────────────────────────────────&#xA;&#xA;async function solve() {&#xA;  const statusEl = document.getElementById(&#39;status&#39;);&#xA;  statusEl.textContent = &#39;Solving…&#39;;&#xA;  statusEl.style.color = &#39;#6b7280&#39;;&#xA;&#xA;  const btn = document.getElementById(&#39;solve-btn&#39;);&#xA;  btn.textContent = &#39;Solving…&#39;;&#xA;  btn.style.opacity = &#39;0.6&#39;;&#xA;  btn.style.pointerEvents = &#39;none&#39;;&#xA;&#xA;  try {&#xA;    const resp = await fetch(`${API_URL}/solve`, {&#xA;      method: &#39;POST&#39;,&#xA;      headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },&#xA;      body: JSON.stringify({ grid: valueMap, subgrids: subgridMap }),&#xA;    });&#xA;    const data = await resp.json();&#xA;&#xA;    if (!resp.ok) {&#xA;      statusEl.textContent = data.error || &#39;Solver returned an error.&#39;;&#xA;      statusEl.style.color = &#39;#dc2626&#39;;&#xA;    } else {&#xA;      solutionMap = data.solution;&#xA;      statusEl.textContent = &#39;Solved!&#39;;&#xA;      statusEl.style.color = &#39;#16a34a&#39;;&#xA;      renderResult();&#xA;    }&#xA;  } catch (err) {&#xA;    statusEl.textContent = &#39;Could not reach solver. Is the server running?&#39;;&#xA;    statusEl.style.color = &#39;#dc2626&#39;;&#xA;  } finally {&#xA;    btn.textContent = &#39;Solve&#39;;&#xA;    btn.style.opacity = &#39;1&#39;;&#xA;    btn.style.pointerEvents = &#39;auto&#39;;&#xA;  }&#xA;}&#xA;&#xA;function renderResult() {&#xA;  const section = document.getElementById(&#39;result-section&#39;);&#xA;  const el = document.getElementById(&#39;result-grid&#39;);&#xA;  section.style.display = &#39;block&#39;;&#xA;  el.innerHTML = &#39;&#39;;&#xA;&#xA;  for (let r = 0; r &lt; 9; r++) {&#xA;    for (let c = 0; c &lt; 9; c++) {&#xA;      const cell = document.createElement(&#39;div&#39;);&#xA;      const sg = subgridMap[r][c];&#xA;      const isGiven = valueMap[r][c] &gt; 0;&#xA;      const val = solutionMap[r][c];&#xA;&#xA;      const bt = r === 0 ? &#39;2px&#39; : (subgridMap[r-1][c] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const bb = r === 8 ? &#39;0&#39;   : (subgridMap[r+1][c] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const bl = c === 0 ? &#39;2px&#39; : (subgridMap[r][c-1] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const br = c === 8 ? &#39;0&#39;   : (subgridMap[r][c+1] !== sg ? &#39;2px&#39; : &#39;1px&#39;);&#xA;      const col = COLORS[sg];&#xA;&#xA;      cell.style.cssText = `&#xA;        width: ${CELL_SIZE}px; height: ${CELL_SIZE}px;&#xA;        display: flex; align-items: center; justify-content: center;&#xA;        font-size: 20px; font-weight: ${isGiven ? &#39;800&#39; : &#39;400&#39;};&#xA;        color: ${isGiven ? col.text : &#39;#374151&#39;};&#xA;        background: ${col.bg};&#xA;        border-top: ${bt} solid ${col.border};&#xA;        border-bottom: ${bb} solid ${col.border};&#xA;        border-left: ${bl} solid ${col.border};&#xA;        border-right: ${br} solid ${col.border};&#xA;        box-sizing: border-box;&#xA;      `;&#xA;      cell.textContent = val;&#xA;      el.appendChild(cell);&#xA;    }&#xA;  }&#xA;}&#xA;&#xA;// ── Reset ────────────────────────────────────────────────────────────────────&#xA;&#xA;function resetAll() {&#xA;  subgridMap = Array.from({length: 9}, () =&gt; Array(9).fill(-1));&#xA;  valueMap   = Array.from({length: 9}, () =&gt; Array(9).fill(0));&#xA;  solutionMap = null;&#xA;  selectedCell = null;&#xA;  document.getElementById(&#39;result-section&#39;).style.display = &#39;none&#39;;&#xA;  document.getElementById(&#39;status&#39;).textContent = &#39;&#39;;&#xA;  renderGrid();&#xA;  renderCounts();&#xA;}&#xA;&#xA;function resetValues() {&#xA;  valueMap = Array.from({length: 9}, () =&gt; Array(9).fill(0));&#xA;  solutionMap = null;&#xA;  selectedCell = null;&#xA;  document.getElementById(&#39;result-section&#39;).style.display = &#39;none&#39;;&#xA;  document.getElementById(&#39;status&#39;).textContent = &#39;&#39;;&#xA;  renderGrid();&#xA;}&#xA;&#xA;// ── Init ─────────────────────────────────────────────────────────────────────&#xA;&#xA;window.setMode = setMode;&#xA;window.solve = solve;&#xA;window.resetAll = resetAll;&#xA;window.resetValues = resetValues;&#xA;&#xA;buildGrid();&#xA;renderCounts();&#xA;selectSubgrid(0);&#xA;&#xA;})();&#xA;&lt;/script&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Robby Lawrence</title><link>https://RobbyLawrence.vercel.app/</link><description>Recent content in Home on Robby Lawrence</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© 2026 Robby Lawrence</copyright><lastBuildDate>Mon, 13 Apr 2026 15:15:12 -0400</lastBuildDate><atom:link href="https://RobbyLawrence.vercel.app/index.xml" rel="self" type="application/rss+xml"/><item><title>Jigsaw Sudoku</title><link>https://RobbyLawrence.vercel.app/posts/jigsaw-sudoku/</link><pubDate>Mon, 13 Apr 2026 15:15:12 -0400</pubDate><guid>https://RobbyLawrence.vercel.app/posts/jigsaw-sudoku/</guid><description>&lt;h3 class="relative group"&gt;Lucas, the Sudoku Wizard
+ &lt;div id="lucas-the-sudoku-wizard" class="anchor"&gt;&lt;/div&gt;
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"&gt;
+ &lt;a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lucas-the-sudoku-wizard" aria-label="Anchor"&gt;#&lt;/a&gt;
+ &lt;/span&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;The path to knowledge often takes many twists and turns. I encountered one of these in the form of a challenge, offered to me by colleague and friend Lucas Hunter.&lt;/p&gt;</description></item><item><title>Hello World!</title><link>https://RobbyLawrence.vercel.app/posts/hello-world/</link><pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate><guid>https://RobbyLawrence.vercel.app/posts/hello-world/</guid><description>&lt;p&gt;Welcome to my site! I&amp;rsquo;ll be writing here about math, optimization, and whatever else I&amp;rsquo;m working on. This website is the product of continuous prodding from both my close friend &lt;a href="https://mmferrari.com" target="_blank" rel="noreferrer"&gt;Matthew Ferrari&lt;/a&gt; and colleague/wordsmith &lt;a href="https://lucaslhunter.com/" target="_blank" rel="noreferrer"&gt;Lucas Hunter&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Jigsaw Sudoku Solver</title><link>https://RobbyLawrence.vercel.app/jigsaw/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://RobbyLawrence.vercel.app/jigsaw/</guid><description>&lt;p&gt;A jigsaw Sudoku solver using &lt;a href="https://www.gnu.org/software/glpk/" target="_blank" rel="noreferrer"&gt;GLPK&lt;/a&gt;. Paint the subgrid regions, fill in the known values, and then solve.&lt;/p&gt;
+&lt;div id="jigsaw-app" style="font-family: inherit; max-width: 600px; margin: 0 auto;"&gt;
+ &lt;div style="display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid #e5e7eb;"&gt;
+ &lt;button id="tab-subgrid" onclick="setMode('subgrid')"
+ style="padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #3b82f6; border-bottom: 2px solid #3b82f6; margin-bottom: -2px;"&gt;
+ 1. Paint Subgrids
+ &lt;/button&gt;
+ &lt;button id="tab-values" onclick="setMode('values')"
+ style="padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -2px;"&gt;
+ 2. Enter Values
+ &lt;/button&gt;
+ &lt;/div&gt;
+ &lt;div id="palette" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center;"&gt;
+ &lt;span style="font-size: 13px; color: #6b7280; margin-right: 4px;"&gt;Subgrid:&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;!-- Subgrid counts --&gt;
+ &lt;div id="counts" style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; font-size: 12px;"&gt;&lt;/div&gt;
+ &lt;!-- Instructions line --&gt;
+ &lt;div id="instructions" style="font-size: 13px; color: #6b7280; margin-bottom: 10px;"&gt;
+ Select a color, then click or drag cells to assign them to that subgrid. Each subgrid needs exactly 9 cells.
+ &lt;/div&gt;
+ &lt;!-- Grid --&gt;
+ &lt;div id="grid" style="display: inline-grid; grid-template-columns: repeat(9, 1fr); gap: 0; border: 3px solid #1f2937; border-radius: 4px; user-select: none; margin-bottom: 16px;"&gt;
+ &lt;/div&gt;
+ &lt;!-- Controls --&gt;
+ &lt;div style="display: flex; gap: 10px; align-items: center; margin-bottom: 16px;"&gt;
+ &lt;button onclick="resetAll()"
+ style="padding: 8px 16px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 14px;"&gt;
+ Reset
+ &lt;/button&gt;
+ &lt;button onclick="resetValues()"
+ style="padding: 8px 16px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 14px;"&gt;
+ Clear Values
+ &lt;/button&gt;
+ &lt;button id="solve-btn" onclick="solve()"
+ style="padding: 8px 20px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; opacity: 0.4; pointer-events: none;"&gt;
+ Solve
+ &lt;/button&gt;
+ &lt;span id="status" style="font-size: 13px; color: #6b7280;"&gt;&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;!-- Result --&gt;
+ &lt;div id="result-section" style="display: none;"&gt;
+ &lt;div style="font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #1f2937;"&gt;Solution&lt;/div&gt;
+ &lt;div id="result-grid" style="display: inline-grid; grid-template-columns: repeat(9, 1fr); gap: 0; border: 3px solid #1f2937; border-radius: 4px; margin-bottom: 8px;"&gt;&lt;/div&gt;
+ &lt;div style="font-size: 12px; color: #6b7280;"&gt;Bold = given &amp;nbsp;·&amp;nbsp; Regular = solved&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+
+const COLORS = [
+ { bg: '#fecaca', border: '#dc2626', text: '#7f1d1d', name: 'Red' },
+ { bg: '#fed7aa', border: '#ea580c', text: '#7c2d12', name: 'Orange' },
+ { bg: '#fef08a', border: '#ca8a04', text: '#713f12', name: 'Yellow' },
+ { bg: '#bbf7d0', border: '#16a34a', text: '#14532d', name: 'Green' },
+ { bg: '#99f6e4', border: '#0d9488', text: '#134e4a', name: 'Teal' },
+ { bg: '#bfdbfe', border: '#2563eb', text: '#1e3a8a', name: 'Blue' },
+ { bg: '#ddd6fe', border: '#7c3aed', text: '#4c1d95', name: 'Purple' },
+ { bg: '#fbcfe8', border: '#db2777', text: '#831843', name: 'Pink' },
+ { bg: '#d1d5db', border: '#4b5563', text: '#111827', name: 'Gray' },
+];
+
+const CELL_SIZE = 52;
+const API_URL = 'https://robby-jigsaw.fly.dev';
+
+let mode = 'subgrid';
+let selectedSubgrid = 0;
+let subgridMap = Array.from({length: 9}, () =&gt; Array(9).fill(-1));
+let valueMap = Array.from({length: 9}, () =&gt; Array(9).fill(0));
+let solutionMap = null;
+let isPainting = false;
+let selectedCell = null; // [r, c]
+
+// ── Build palette ────────────────────────────────────────────────────────────
+
+const palette = document.getElementById('palette');
+COLORS.forEach((c, i) =&gt; {
+ const btn = document.createElement('button');
+ btn.id = `palette-${i}`;
+ btn.title = c.name;
+ btn.style.cssText = `
+ width: 32px; height: 32px; border-radius: 6px; cursor: pointer;
+ background: ${c.bg}; border: 3px solid ${i === 0 ? c.border : '#d1d5db'};
+ transition: border-color 0.1s;
+ `;
+ btn.onclick = () =&gt; selectSubgrid(i);
+ palette.appendChild(btn);
+});
+
+// ── Build counts ─────────────────────────────────────────────────────────────
+
+function renderCounts() {
+ const counts = Array(9).fill(0);
+ for (let r = 0; r &lt; 9; r++)
+ for (let c = 0; c &lt; 9; c++)
+ if (subgridMap[r][c] &gt;= 0) counts[subgridMap[r][c]]++;
+
+ const el = document.getElementById('counts');
+ el.innerHTML = '';
+ COLORS.forEach((col, i) =&gt; {
+ const span = document.createElement('span');
+ span.style.cssText = `
+ display: inline-flex; align-items: center; gap: 4px;
+ background: ${col.bg}; border: 1px solid ${col.border};
+ border-radius: 4px; padding: 2px 6px; color: ${col.text};
+ `;
+ const ok = counts[i] === 9;
+ span.innerHTML = `&lt;span style="font-size:11px;"&gt;${col.name}&lt;/span&gt;
+ &lt;span style="font-weight:700; color:${ok ? '#16a34a' : counts[i] &gt; 9 ? '#dc2626' : col.text};"&gt;
+ ${counts[i]}/9
+ &lt;/span&gt;`;
+ el.appendChild(span);
+ });
+
+ updateSolveButton(counts);
+}
+
+function updateSolveButton(counts) {
+ const allGood = counts.every(c =&gt; c === 9);
+ const btn = document.getElementById('solve-btn');
+ btn.style.opacity = allGood ? '1' : '0.4';
+ btn.style.pointerEvents = allGood ? 'auto' : 'none';
+}
+
+// ── Build grid ───────────────────────────────────────────────────────────────
+
+const gridEl = document.getElementById('grid');
+
+function buildGrid() {
+ gridEl.innerHTML = '';
+ for (let r = 0; r &lt; 9; r++) {
+ for (let c = 0; c &lt; 9; c++) {
+ const cell = document.createElement('div');
+ cell.id = `cell-${r}-${c}`;
+ cell.style.cssText = `
+ width: ${CELL_SIZE}px; height: ${CELL_SIZE}px;
+ display: flex; align-items: center; justify-content: center;
+ font-size: 20px; font-weight: 600;
+ cursor: pointer; box-sizing: border-box;
+ transition: filter 0.1s;
+ `;
+ cell.addEventListener('mousedown', e =&gt; { e.preventDefault(); onCellDown(r, c); });
+ cell.addEventListener('mouseenter', () =&gt; { if (isPainting) onCellDown(r, c); });
+ cell.addEventListener('click', () =&gt; onCellClick(r, c));
+ gridEl.appendChild(cell);
+ }
+ }
+ renderGrid();
+}
+
+function renderGrid() {
+ for (let r = 0; r &lt; 9; r++) {
+ for (let c = 0; c &lt; 9; c++) {
+ const cell = document.getElementById(`cell-${r}-${c}`);
+ const sg = subgridMap[r][c];
+ const val = valueMap[r][c];
+ const isSelected = selectedCell &amp;&amp; selectedCell[0] === r &amp;&amp; selectedCell[1] === c;
+
+ // Background
+ const bg = sg &gt;= 0 ? COLORS[sg].bg : '#f9fafb';
+ cell.style.background = isSelected ? '#93c5fd' : bg;
+
+ // Borders — thick where subgrid changes, thin within same subgrid
+ const bt = r === 0 ? '2px' : (subgridMap[r-1][c] !== sg ? '2px' : '1px');
+ const bb = r === 8 ? '0' : (subgridMap[r+1][c] !== sg ? '2px' : '1px');
+ const bl = c === 0 ? '2px' : (subgridMap[r][c-1] !== sg ? '2px' : '1px');
+ const br = c === 8 ? '0' : (subgridMap[r][c+1] !== sg ? '2px' : '1px');
+ const borderColor = sg &gt;= 0 ? COLORS[sg].border : '#9ca3af';
+ cell.style.borderTop = `${bt} solid ${borderColor}`;
+ cell.style.borderBottom = `${bb} solid ${borderColor}`;
+ cell.style.borderLeft = `${bl} solid ${borderColor}`;
+ cell.style.borderRight = `${br} solid ${borderColor}`;
+
+ // Value
+ if (mode === 'values' || mode === 'subgrid') {
+ cell.textContent = val &gt; 0 ? val : '';
+ cell.style.color = sg &gt;= 0 ? COLORS[sg].text : '#374151';
+ }
+ }
+ }
+}
+
+// ── Interaction ──────────────────────────────────────────────────────────────
+
+document.addEventListener('mouseup', () =&gt; { isPainting = false; });
+
+function onCellDown(r, c) {
+ if (mode !== 'subgrid') return;
+ isPainting = true;
+ subgridMap[r][c] = selectedSubgrid;
+ solutionMap = null;
+ document.getElementById('result-section').style.display = 'none';
+ renderGrid();
+ renderCounts();
+}
+
+function onCellClick(r, c) {
+ if (mode !== 'values') return;
+ selectedCell = [r, c];
+ renderGrid();
+}
+
+document.addEventListener('keydown', e =&gt; {
+ if (mode !== 'values' || !selectedCell) return;
+ const [r, c] = selectedCell;
+
+ if (e.key &gt;= '1' &amp;&amp; e.key &lt;= '9') {
+ valueMap[r][c] = parseInt(e.key);
+ solutionMap = null;
+ document.getElementById('result-section').style.display = 'none';
+ renderGrid();
+ } else if (e.key === 'Backspace' || e.key === 'Delete' || e.key === '0') {
+ valueMap[r][c] = 0;
+ solutionMap = null;
+ document.getElementById('result-section').style.display = 'none';
+ renderGrid();
+ } else if (e.key === 'ArrowRight') { selectedCell = [r, Math.min(8, c+1)]; renderGrid(); }
+ else if (e.key === 'ArrowLeft') { selectedCell = [r, Math.max(0, c-1)]; renderGrid(); }
+ else if (e.key === 'ArrowDown') { selectedCell = [Math.min(8, r+1), c]; renderGrid(); }
+ else if (e.key === 'ArrowUp') { selectedCell = [Math.max(0, r-1), c]; renderGrid(); }
+});
+
+// ── Mode &amp; subgrid selection ─────────────────────────────────────────────────
+
+function selectSubgrid(i) {
+ selectedSubgrid = i;
+ COLORS.forEach((c, idx) =&gt; {
+ const btn = document.getElementById(`palette-${idx}`);
+ btn.style.border = `3px solid ${idx === i ? c.border : '#d1d5db'}`;
+ btn.style.transform = idx === i ? 'scale(1.15)' : 'scale(1)';
+ });
+}
+
+function setMode(m) {
+ mode = m;
+ selectedCell = null;
+
+ document.getElementById('tab-subgrid').style.color = m === 'subgrid' ? '#3b82f6' : '#6b7280';
+ document.getElementById('tab-subgrid').style.borderBottom = m === 'subgrid' ? '2px solid #3b82f6' : '2px solid transparent';
+ document.getElementById('tab-values').style.color = m === 'values' ? '#3b82f6' : '#6b7280';
+ document.getElementById('tab-values').style.borderBottom = m === 'values' ? '2px solid #3b82f6' : '2px solid transparent';
+
+ document.getElementById('palette').style.display = m === 'subgrid' ? 'flex' : 'none';
+ document.getElementById('counts').style.display = m === 'subgrid' ? 'flex' : 'none';
+ document.getElementById('instructions').textContent = m === 'subgrid'
+ ? 'Select a color, then click or drag cells to assign them to that subgrid. Each subgrid needs exactly 9 cells.'
+ : 'Click a cell, then type a digit (1–9). Use arrow keys to navigate. Leave unknown cells blank.';
+
+ renderGrid();
+}
+
+// ── Solve ────────────────────────────────────────────────────────────────────
+
+async function solve() {
+ const statusEl = document.getElementById('status');
+ statusEl.textContent = 'Solving…';
+ statusEl.style.color = '#6b7280';
+
+ const btn = document.getElementById('solve-btn');
+ btn.textContent = 'Solving…';
+ btn.style.opacity = '0.6';
+ btn.style.pointerEvents = 'none';
+
+ try {
+ const resp = await fetch(`${API_URL}/solve`, {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ grid: valueMap, subgrids: subgridMap }),
+ });
+ const data = await resp.json();
+
+ if (!resp.ok) {
+ statusEl.textContent = data.error || 'Solver returned an error.';
+ statusEl.style.color = '#dc2626';
+ } else {
+ solutionMap = data.solution;
+ statusEl.textContent = 'Solved!';
+ statusEl.style.color = '#16a34a';
+ renderResult();
+ }
+ } catch (err) {
+ statusEl.textContent = 'Could not reach solver. Is the server running?';
+ statusEl.style.color = '#dc2626';
+ } finally {
+ btn.textContent = 'Solve';
+ btn.style.opacity = '1';
+ btn.style.pointerEvents = 'auto';
+ }
+}
+
+function renderResult() {
+ const section = document.getElementById('result-section');
+ const el = document.getElementById('result-grid');
+ section.style.display = 'block';
+ el.innerHTML = '';
+
+ for (let r = 0; r &lt; 9; r++) {
+ for (let c = 0; c &lt; 9; c++) {
+ const cell = document.createElement('div');
+ const sg = subgridMap[r][c];
+ const isGiven = valueMap[r][c] &gt; 0;
+ const val = solutionMap[r][c];
+
+ const bt = r === 0 ? '2px' : (subgridMap[r-1][c] !== sg ? '2px' : '1px');
+ const bb = r === 8 ? '0' : (subgridMap[r+1][c] !== sg ? '2px' : '1px');
+ const bl = c === 0 ? '2px' : (subgridMap[r][c-1] !== sg ? '2px' : '1px');
+ const br = c === 8 ? '0' : (subgridMap[r][c+1] !== sg ? '2px' : '1px');
+ const col = COLORS[sg];
+
+ cell.style.cssText = `
+ width: ${CELL_SIZE}px; height: ${CELL_SIZE}px;
+ display: flex; align-items: center; justify-content: center;
+ font-size: 20px; font-weight: ${isGiven ? '800' : '400'};
+ color: ${isGiven ? col.text : '#374151'};
+ background: ${col.bg};
+ border-top: ${bt} solid ${col.border};
+ border-bottom: ${bb} solid ${col.border};
+ border-left: ${bl} solid ${col.border};
+ border-right: ${br} solid ${col.border};
+ box-sizing: border-box;
+ `;
+ cell.textContent = val;
+ el.appendChild(cell);
+ }
+ }
+}
+
+// ── Reset ────────────────────────────────────────────────────────────────────
+
+function resetAll() {
+ subgridMap = Array.from({length: 9}, () =&gt; Array(9).fill(-1));
+ valueMap = Array.from({length: 9}, () =&gt; Array(9).fill(0));
+ solutionMap = null;
+ selectedCell = null;
+ document.getElementById('result-section').style.display = 'none';
+ document.getElementById('status').textContent = '';
+ renderGrid();
+ renderCounts();
+}
+
+function resetValues() {
+ valueMap = Array.from({length: 9}, () =&gt; Array(9).fill(0));
+ solutionMap = null;
+ selectedCell = null;
+ document.getElementById('result-section').style.display = 'none';
+ document.getElementById('status').textContent = '';
+ renderGrid();
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+
+window.setMode = setMode;
+window.solve = solve;
+window.resetAll = resetAll;
+window.resetValues = resetValues;
+
+buildGrid();
+renderCounts();
+selectSubgrid(0);
+
+})();
+&lt;/script&gt;</description></item><item><title>SET</title><link>https://RobbyLawrence.vercel.app/set/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://RobbyLawrence.vercel.app/set/</guid><description>&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Set_%28card_game%29" target="_blank" rel="noreferrer"&gt;SET&lt;/a&gt; is a card game by Marsha Falco. Each card has four features — shape, color, number, and shading — each with three values. A &lt;em&gt;set&lt;/em&gt; is three cards where every feature is either all the same or all different across the three.&lt;/p&gt;</description></item></channel></rss>
