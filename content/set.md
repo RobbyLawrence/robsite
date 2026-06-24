@@ -14,17 +14,26 @@ Play solo against a bot, take it slow in zen mode, or challenge a friend in a pr
       Solo vs Bot
     </button>
     <button id="tab-zen" onclick="setApp.setMode('zen')"
-      style="padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -2px;">
+      style="padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #374151; border-bottom: 2px solid transparent; margin-bottom: -2px;">
       Zen
     </button>
     <button id="tab-versus" onclick="setApp.setMode('versus')"
-      style="padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -2px;">
+      style="padding: 8px 20px; border: none; background: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #374151; border-bottom: 2px solid transparent; margin-bottom: -2px;">
       Versus
     </button>
   </div>
 
   <!-- Mode-specific controls -->
   <div id="mode-controls" style="margin-bottom: 14px;"></div>
+
+  <!-- Accessibility controls -->
+  <div style="display: flex; gap: 8px; align-items: center; font-size: 13px; color: #6b7280; margin-bottom: 12px;">
+    <span>Palette:</span>
+    <button id="palette-standard" onclick="setApp.setPalette('standard')"
+      style="padding: 4px 12px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 4px; cursor: pointer; font-size: 13px;">Standard</button>
+    <button id="palette-cb" onclick="setApp.setPalette('cb')"
+      style="padding: 4px 12px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 4px; cursor: pointer; font-size: 13px;">Color-blind friendly</button>
+  </div>
 
   <!-- Scoreboard / status line -->
   <div id="scoreboard" style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; font-size: 13px; color: #374151; min-height: 22px;"></div>
@@ -35,15 +44,15 @@ Play solo against a bot, take it slow in zen mode, or challenge a friend in a pr
   <!-- Action row -->
   <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px;">
     <button id="btn-add3" onclick="setApp.addThree()"
-      style="padding: 8px 16px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 14px;">
+      style="padding: 8px 16px; background: #e5e7eb; border: 1px solid #9ca3af; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; color: #1f2937;">
       Add 3 cards
     </button>
     <button id="btn-hint" onclick="setApp.hint()"
-      style="padding: 8px 16px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 14px; display: none;">
+      style="padding: 8px 16px; background: #e5e7eb; border: 1px solid #9ca3af; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; color: #1f2937; display: none;">
       Hint
     </button>
     <button id="btn-restart" onclick="setApp.restart()"
-      style="padding: 8px 16px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 14px;">
+      style="padding: 8px 16px; background: #e5e7eb; border: 1px solid #9ca3af; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; color: #1f2937;">
       New game
     </button>
     <span id="status" style="font-size: 13px; color: #6b7280;"></span>
@@ -59,7 +68,15 @@ Play solo against a bot, take it slow in zen mode, or challenge a friend in a pr
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
-const COLORS = ['#dc2626', '#16a34a', '#7c3aed'];           // red, green, purple
+const PALETTES = {
+  standard: ['#dc2626', '#16a34a', '#7c3aed'],              // red, green, purple
+  cb:       ['#d55e00', '#0072b2', '#000000'],              // vermillion, blue, black (Okabe-Ito)
+};
+const COLOR_LABELS = {
+  standard: ['red', 'green', 'purple'],
+  cb:       ['orange', 'blue', 'black'],
+};
+let COLORS = PALETTES.standard;
 const SHAPES = ['diamond', 'squiggle', 'oval'];
 const FILLS  = ['solid', 'striped', 'empty'];
 
@@ -171,7 +188,16 @@ const state = {
   playerId: null,
   playerName: null,
   versusState: null,
+  palette: 'standard',
 };
+
+try {
+  const saved = localStorage.getItem('setPalette');
+  if (saved === 'standard' || saved === 'cb') {
+    state.palette = saved;
+    COLORS = PALETTES[saved];
+  }
+} catch (e) {}
 
 // ── Board operations ─────────────────────────────────────────────────────────
 
@@ -216,10 +242,30 @@ function maybeEndGame() {
 
 function render() {
   renderControls();
+  renderPaletteButtons();
   renderScoreboard();
   renderBoard();
   renderCaptured();
   updateActionButtons();
+}
+
+function renderPaletteButtons() {
+  for (const p of ['standard', 'cb']) {
+    const el = document.getElementById(`palette-${p}`);
+    if (!el) continue;
+    const active = state.palette === p;
+    el.style.borderColor = active ? '#3b82f6' : '#d1d5db';
+    el.style.background = active ? '#dbeafe' : 'white';
+    el.style.color = active ? '#1e3a8a' : '#374151';
+  }
+}
+
+function setPalette(p) {
+  if (!PALETTES[p] || p === state.palette) return;
+  state.palette = p;
+  COLORS = PALETTES[p];
+  try { localStorage.setItem('setPalette', p); } catch (e) {}
+  render();
 }
 
 function renderControls() {
@@ -257,10 +303,10 @@ function renderControls() {
         </div>`;
     } else {
       el.innerHTML = `
-        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 13px; color: #374151;">
-          <span>Room <strong style="font-family: monospace; background: #f3f4f6; padding: 2px 8px; border-radius: 4px;">${state.room}</strong></span>
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 14px; color: #1f2937;">
+          <span>Room <strong style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #1e3a8a; color: #ffffff; padding: 4px 12px; border-radius: 6px; font-size: 15px; letter-spacing: 1px;">${state.room}</strong></span>
           <button onclick="setApp.leaveVersus()"
-            style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 13px;">Leave</button>
+            style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; font-size: 13px; color: #374151;">Leave</button>
         </div>`;
     }
   }
@@ -316,7 +362,7 @@ function renderCaptured() {
 }
 
 function describeCard(c) {
-  const colors = ['red', 'green', 'purple'];
+  const colors = COLOR_LABELS[state.palette];
   const shapes = ['diamond', 'squiggle', 'oval'];
   const fills = ['solid', 'striped', 'empty'];
   return `${c.qty + 1} ${fills[c.fill]} ${colors[c.color]} ${shapes[c.shape]}${c.qty > 0 ? 's' : ''}`;
@@ -570,7 +616,9 @@ function handleVersusMessage(msg) {
     render();
   } else if (msg.type === 'state') {
     state.versusState = msg.state;
+    state.ended = !!msg.state.ended;
     state.locked = false;
+    state.selected = [];
     render();
   } else if (msg.type === 'result') {
     if (msg.valid) {
@@ -622,7 +670,7 @@ function setMode(m) {
 // ── Public API ───────────────────────────────────────────────────────────────
 
 window.setApp = {
-  setMode, setDifficulty, clickCard, addThree, hint, restart,
+  setMode, setDifficulty, setPalette, clickCard, addThree, hint, restart,
   joinVersus, leaveVersus,
 };
 
