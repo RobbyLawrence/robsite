@@ -94,8 +94,8 @@ If a cell is enclosed but *not* reachable from the horse through other enclosed 
 ### How's the performance?
 Previous projects have shown me that Gurobi is insanely fast. Even so: a typical $16 \times 16$ daily puzzle produces a model with roughly $2{,}300$ rows and $1{,}100$ columns, and the flow variables in particular felt like they might slow things down.
 
-Gurobi saved the day again. The program typically runs in well under a tenth of a second.
+Gurobi saved the day again. The program typically runs in well under a tenth of a second, and achieves optimality on every posssible puzzle.
 
 <img src="solver.png" alt="Solver terminal output" style="width: 80%; display: block; margin: 1rem auto;">
 
-One more farmer saved!
+Disclaimer: I designed this model over spring break in 2026 while in Mexico, but am only posting about it now. I've now read Dynomight's article about the same topic, which uses a strikingly similar model. Kudos! NP-complete decision problems are hard!
