@@ -13,5 +13,5 @@ I'm currently working on an algorithm to efficiently apply an integer-preserving
   <img src="img/dance2.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
 </div>
 <div style="max-width: 350px; margin: 6px auto 0;">
-  <img src="img/tabletennis.jpeg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;" />
+  <img src="img/tabletennisservice.jpeg" style="width: 100%; height: auto; border-radius: 8px;" />
 </div>
