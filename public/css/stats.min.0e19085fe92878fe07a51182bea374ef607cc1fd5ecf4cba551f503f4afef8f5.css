@@ -1,0 +1,1 @@
+.stat-count{font-variant-numeric:tabular-nums}.like-container{margin:30px 0 10px}.like-button{gap:.5em;color:var(--accent);border:1px solid var(--accent)}.like-button[aria-pressed=true]{background:var(--accent);color:var(--background)}.like-button:disabled{opacity:.6;cursor:default}
