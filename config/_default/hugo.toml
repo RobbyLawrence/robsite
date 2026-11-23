@@ -4,7 +4,7 @@
 
 theme = "terminal"
 title = "Robby Lawrence"
-baseURL = "https://RobbyLawrence.vercel.app"
+baseURL = "https://www.robbylawrence.com/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 disableLanguages = ["de", "es", "fr", "it", "ja", "pt-br", "pt-pt", "zh-cn"]
