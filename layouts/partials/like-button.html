@@ -1,0 +1,10 @@
+{{/* Like button for the current page; wired up by assets/js/stats.js. */}}
+{{ $id := partial "stats-id.html" . }}
+{{ if and $id site.Params.firebase.apiKey site.Params.showLikes }}
+  <div class="like-container">
+    <button type="button" class="like-button outline" id="like-button" aria-pressed="false" disabled>
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-label">Like</span>
+    </button>
+  </div>
+{{ end }}

@@ -1,0 +1,17 @@
+{{/*
+  Returns the Firestore document suffix for a page's counters, e.g.
+  "posts-enclose-horse-index.md" -> docs "views_posts-enclose-horse-index.md"
+  and "likes_posts-enclose-horse-index.md". This matches the IDs the Blowfish
+  theme used, so existing counts carry over. Returns "" if the page has none.
+*/}}
+{{ $id := "" }}
+{{ if in (slice "page" "section") .Kind }}
+  {{ with .File }}{{ $id = .Path }}{{ end }}
+{{ else if eq .Kind "term" }}
+  {{ $id = printf "term_%s" .Data.Term }}
+{{ else if eq .Kind "taxonomy" }}
+  {{ $id = printf "taxonomy_%s" .Data.Plural }}
+{{ else if eq .Kind "home" }}
+  {{ $id = "home" }}
+{{ end }}
+{{ return replace $id "/" "-" }}

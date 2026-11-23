@@ -1,0 +1,14 @@
+{{/* View and like counts for a page; filled in live by assets/js/stats.js. */}}
+{{ $id := partial "stats-id.html" . }}
+{{ if and $id site.Params.firebase.apiKey }}
+  {{ if site.Params.showViews }}
+    <span class="post-stat" title="Views">
+      <span class="stat-count" data-collection="views" data-id="views_{{ $id }}">–</span> views
+    </span>
+  {{ end }}
+  {{ if site.Params.showLikes }}
+    <span class="post-stat" title="Likes">
+      <span class="stat-count" data-collection="likes" data-id="likes_{{ $id }}">–</span> likes
+    </span>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,38 @@
+{{/* Math: KaTeX on pages with `math = true` or the {{< katex >}} shortcode,
+     and on list pages, whose post summaries may contain math. */}}
+{{ if or .Params.math (.HasShortcode "katex") .IsNode }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+    integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false },
+        { left: '\\[', right: '\\]', display: true },
+      ],
+    });"></script>
+{{ end }}
+
+{{/* View and like counters (Firestore). */}}
+{{ with site.Params.firebase }}
+  {{ if .apiKey }}
+    {{ $config := dict
+      "apiKey" .apiKey
+      "authDomain" .authDomain
+      "projectId" .projectId
+      "storageBucket" .storageBucket
+      "messagingSenderId" .messagingSenderId
+      "appId" .appId
+    }}
+    <script id="stats-config" type="application/json">
+      {{- dict "firebase" $config "page" (partial "stats-id.html" $) | jsonify | safeJS -}}
+    </script>
+    {{ $js := resources.Get "js/stats.js" | minify | fingerprint }}
+    <script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+    {{/* Styles are in assets/css/stats.css, which the theme loads automatically. */}}
+  {{ end }}
+{{ end }}
