@@ -2,31 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Robby Lawrence</title>
-    <link>https://www.robbylawrence.com/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Robby Lawrence</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Aug 2026 14:36:28 -0400</lastBuildDate>
-    <atom:link href="https://www.robbylawrence.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Enclosing a Horse</title>
-      <link>https://www.robbylawrence.com/posts/enclose-horse/</link>
+      <link>http://localhost:1313/posts/enclose-horse/</link>
       <pubDate>Sat, 22 Aug 2026 14:36:28 -0400</pubDate>
-      <guid>https://www.robbylawrence.com/posts/enclose-horse/</guid>
+      <guid>http://localhost:1313/posts/enclose-horse/</guid>
       <description>&lt;h3 id=&#34;a-new-daily-game&#34;&gt;A new daily game&lt;/h3&gt;&#xA;&lt;p&gt;Somewhere between Wordle and the NYT crossword, I stumbled onto &lt;a href=&#34;https://enclose.horse&#34;&gt;enclose.horse&lt;/a&gt;. One of my coworkers (shoutout Alex!) first taught me how to play. There&amp;rsquo;s a horse loose on a grid of grass and water, and you have a limited budget of walls to place. The horse can walk in the four cardinal directions across grass, gets blocked by water and walls, and can teleport through matching portals. Naturally. The goal is to place walls such that the horse is &lt;em&gt;enclosed&lt;/em&gt;, as the name suggests, so that no path from the horse reaches the edge of the grid. Your score is characterized by the number of things enclosed with the horse. Each cell of grass enclosed with the horse is worth $1$, cherries are worth $4$, golden apples $11$, and bee swarms &lt;em&gt;cost&lt;/em&gt; $4$.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Stochastic Programming</title>
+      <link>http://localhost:1313/posts/stochastic-programming/</link>
+      <pubDate>Mon, 04 May 2026 09:43:18 -0400</pubDate>
+      <guid>http://localhost:1313/posts/stochastic-programming/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Jigsaw Sudoku</title>
-      <link>https://www.robbylawrence.com/posts/jigsaw-sudoku/</link>
+      <link>http://localhost:1313/posts/jigsaw-sudoku/</link>
       <pubDate>Mon, 13 Apr 2026 15:15:12 -0400</pubDate>
-      <guid>https://www.robbylawrence.com/posts/jigsaw-sudoku/</guid>
+      <guid>http://localhost:1313/posts/jigsaw-sudoku/</guid>
       <description>&lt;h3 id=&#34;lucas-the-sudoku-wizard&#34;&gt;Lucas, the Sudoku Wizard&lt;/h3&gt;&#xA;&lt;p&gt;The path to knowledge often takes many twists and turns. I encountered one of these in the form of a challenge, offered to me by colleague and friend Lucas Hunter.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello World!</title>
-      <link>https://www.robbylawrence.com/posts/hello-world/</link>
+      <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://www.robbylawrence.com/posts/hello-world/</guid>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
       <description>&lt;p&gt;Welcome to my site! I&amp;rsquo;ll be writing here about math, optimization, and whatever else I&amp;rsquo;m working on. This website is the product of continuous prodding from both my close friend &lt;a href=&#34;https://mmferrari.com&#34;&gt;Matthew Ferrari&lt;/a&gt; and colleague/wordsmith &lt;a href=&#34;https://lucaslhunter.com/&#34;&gt;Lucas Hunter&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
