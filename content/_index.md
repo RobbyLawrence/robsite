@@ -1,7 +1,7 @@
 ---
 title: "Home"
 ---
-My name is Robby, and I'm a double major in Honors: Mathematics and Computer Science at the University of Tennessee, Knoxville. My research interests include numerical linear algebra and linear optimization.
+My name is Robby, and I'm a double major in Honors: Mathematics and Computer Science at the University of Tennessee, Knoxville. My research interests include numerical linear algebra and convex optimization.
 
 I'm currently working on an algorithm to efficiently apply an integer-preserving rank-1 update to the roundoff-error free LU factorization of a basis matrix. Reach out if you'd like to hear more!
 
