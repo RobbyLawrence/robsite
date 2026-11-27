@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Solving Uzzle :: Robby Lawrence</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Another fun game Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/uzzle/" />
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEDMYR1V0K"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PEDMYR1V0K');
+        }
+      </script>
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/stats.min.0e19085fe92878fe07a51182bea374ef607cc1fd5ecf4cba551f503f4afef8f5.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.c4581949edab7810737609fc5568852bcd908945f14561e366dcd2300a370545.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a2cc694a9b481f15d41722bffc2cc54eea4c4f74fd9072b0b33253604c22606e.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Solving Uzzle">
+<meta property="og:description" content="Another fun game Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.
+" />
+<meta property="og:url" content="http://localhost:1313/posts/uzzle/" />
+<meta property="og:site_name" content="Robby Lawrence" />
+
+
+<meta property="og:image" content="http://localhost:1313/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2026-11-27 12:55:02 -0500 EST" />
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+    integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"
+    integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false },
+        { left: '\\[', right: '\\]', display: true },
+      ],
+    });"></script>
+
+
+
+
+  
+    
+    <script id="stats-config" type="application/json">{"firebase":{"apiKey":"AIzaSyC991uIePxJTsnDgHnle6DWXWLq4Icnoys","appId":"1:910884653224:web:c8ff62e3619481f53a1a9d","authDomain":"robsite-efa74.firebaseapp.com","messagingSenderId":"910884653224","projectId":"robsite-efa74","storageBucket":"robsite-efa74.firebasestorage.app"},"page":"posts-uzzle-index.md"}</script>
+    
+    <script type="module" src="/js/stats.min.141b6aacbf8ff3d4ad443e972e23db8b493c0ae9f7bb847e15b09dc7d8ef06d4.js" integrity="sha256-FBtqrL&#43;P89StRD6XLiPbi0k8Cun3u4R&#43;FbCdx9jvBtQ="></script>
+    
+  
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    robby lawrence
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/">Posts</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf">Resume</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/" >Posts</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf" >Resume</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/uzzle/">Solving Uzzle</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">27 November 2026</time>
+
+
+  
+    <span class="post-stat" title="Views">
+      <span class="stat-count" data-collection="views" data-id="views_posts-uzzle-index.md">–</span> views
+    </span>
+  
+  
+    <span class="post-stat" title="Likes">
+      <span class="stat-count" data-collection="likes" data-id="likes_posts-uzzle-index.md">–</span> likes
+    </span>
+  
+
+</div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        
+
+<h3 id="another-fun-game">Another fun game<a href="#another-fun-game" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.</p>
+<img src="uzzleexample.png" alt="An Uzzle pattern card and the five blocks" style="width: 60%; display: block; margin: 1rem auto;">
+<p>Since we have five colors, we can determine how many possible combinations and repeat patterns there are. With five colors, there are $\binom{5}{2}=10$ pairs of distinct colors, plus $5$ doubles (RR, PP, etc.), for $15$ combinations in total. Note that we have &ldquo;commutativity&rdquo; on the blocks: flipping a block end-to-end turns RG into GR. Five blocks with four faces each gives $20$ faces, so exactly $5$ combinations show up twice: RP, RO, PG, OB, and BG. Here&rsquo;s the full set:</p>
+<table style="display: table; margin-left: auto; margin-right: auto;">
+  <thead>
+      <tr>
+          <th style="text-align: center">Block</th>
+          <th style="text-align: center">Face 1</th>
+          <th style="text-align: center">Face 2</th>
+          <th style="text-align: center">Face 3</th>
+          <th style="text-align: center">Face 4</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">RR</td>
+          <td style="text-align: center">PG</td>
+          <td style="text-align: center">OB</td>
+          <td style="text-align: center">OG</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">RO</td>
+          <td style="text-align: center">PP</td>
+          <td style="text-align: center">OB</td>
+          <td style="text-align: center">BG</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">RP</td>
+          <td style="text-align: center">RO</td>
+          <td style="text-align: center">PB</td>
+          <td style="text-align: center">GG</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">4</td>
+          <td style="text-align: center">RG</td>
+          <td style="text-align: center">PO</td>
+          <td style="text-align: center">PG</td>
+          <td style="text-align: center">BB</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center">RP</td>
+          <td style="text-align: center">RB</td>
+          <td style="text-align: center">OO</td>
+          <td style="text-align: center">BG</td>
+      </tr>
+  </tbody>
+</table>
+<p>Since every puzzle uses all five blocks, every card has exactly $10$ colored cells, leaving only $2$ blanks on a $12$-cell grid.</p>
+<h3 id="my-first-instinct">My first instinct<a href="#my-first-instinct" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>People who know me won&rsquo;t be surprised: my first instinct was linear programming. Playing by hand with my family, I noticed that some placements are completely determined. If a line of colored cells is surrounded by blanks or the border of the grid, there&rsquo;s only one way to split it into blocks; start at one end and pair cells off such that each pair is a face on one of the blocks. My plan was a preprocessor that knocks out these forced placements, followed by an integer program to handle the rest.</p>
+<p>However, further thought ruled out this approach. Once you&rsquo;ve decided where the five $2\times1$ pieces go, there are at most $5!=120$ ways to hand out the blocks, and no block repeats a pair, so choosing a block for a spot also chooses its face. The number of ways to split $10$ cells into dominoes on a $4\times3$ grid is tiny. The search space is miniscule. An integer program would spend more time getting built than solving!</p>
+<h3 id="generalizing-the-line-trick-into-an-algorithm">Generalizing the line trick into an algorithm<a href="#generalizing-the-line-trick-into-an-algorithm" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>It turns out the preprocessor idea is the whole solver, as long as we generalize it a bit. Consider any colored cell that hasn&rsquo;t been covered yet. Its <em>options</em> are the ways it could be covered: a colored, uncovered neighbor, paired with an unused block that has a face matching the two colors. The ends of a line are exactly the cells with one option, but so is a cell whose only neighbor would need a block that&rsquo;s already been used.</p>
+<p>This suggests a backtracking search that always branches on the most constrained cell:</p>
+<ol>
+<li>Find the uncovered colored cell with the fewest options.</li>
+<li>If it has $0$ options, this branch is a dead end, and we rollback until we have no contradictions.</li>
+<li>If it has $1$ option, it&rsquo;s forced; place it.</li>
+<li>Otherwise, try each option in turn.</li>
+<li>Repeat until every colored cell is covered.</li>
+</ol>
+<p>Moves that determine a face are made first. The only real branching happens in blobs like a $2\times2$ square, which can be split horizontally or vertically, and even then the colors usually rule one split out.</p>
+<p>This is what the solver looks like on a level 4 card. The left grid is the card (with <code>.</code> for blank), and the right grid shows which block covers each cell:</p>
+<pre tabindex="0"><code>   R B O G      4 2 1 1
+   G G R B      4 2 5 5
+   . O R .      . 3 3 .
+  Block 1: face OG, horizontal at (1,4)-(1,3)
+  Block 2: face BG, vertical at (1,2)-(2,2)
+  Block 3: face RO, horizontal at (3,2)-(3,3)
+  Block 4: face RG, vertical at (1,1)-(2,1)
+  Block 5: face RB, horizontal at (2,3)-(2,4)
+</code></pre><h3 id="hows-the-performance">How&rsquo;s the performance?<a href="#hows-the-performance" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>No Gurobi this time! I wrote the whole thing by hand in under $300$ lines of C with no dependencies. The search finds <em>every</em> solution, not just the first; this matters, since a card can have more than one when two blocks share a pair (blocks $2$ and $3$ both have RO, for instance). We use regular old Make for building.</p>
+<p>Solving the level 4 card above takes about $2.6$ microseconds on my laptop. A win for the backtracking community, for once.</p>
+<p>The C implementation of this algorithm can be found <a href="https://github.com/RobbyLawrence/uzzle-solver">here</a>.</p>
+
+      </div></div>
+
+  
+
+
+  <div class="like-container">
+    <button type="button" class="like-button outline" id="like-button" aria-pressed="false" disabled>
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-label">Like</span>
+    </button>
+  </div>
+
+
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="http://localhost:1313/posts/enclose-horse/" class="button inline next">
+         [<span class="button__text">Enclosing a Horse</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

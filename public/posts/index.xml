@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Robby Lawrence</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Aug 2026 14:36:28 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:55:02 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solving Uzzle</title>
+      <link>http://localhost:1313/posts/uzzle/</link>
+      <pubDate>Fri, 27 Nov 2026 12:55:02 -0500</pubDate>
+      <guid>http://localhost:1313/posts/uzzle/</guid>
+      <description>&lt;h3 id=&#34;another-fun-game&#34;&gt;Another fun game&lt;/h3&gt;&#xA;&lt;p&gt;Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&amp;rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Enclosing a Horse</title>
       <link>http://localhost:1313/posts/enclose-horse/</link>
