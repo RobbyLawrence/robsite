@@ -6,7 +6,7 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Another fun game Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.
+<meta name="description" content="Uzzle at Thanksgiving Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.
 " />
 <meta name="keywords" content="" />
 
@@ -91,7 +91,7 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Solving Uzzle">
-<meta property="og:description" content="Another fun game Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.
+<meta property="og:description" content="Uzzle at Thanksgiving Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.
 " />
 <meta property="og:url" content="http://localhost:1313/posts/uzzle/" />
 <meta property="og:site_name" content="Robby Lawrence" />
@@ -233,7 +233,7 @@
   <div class="post-content"><div>
         
 
-<h3 id="another-fun-game">Another fun game<a href="#another-fun-game" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h3 id="uzzle-at-thanksgiving">Uzzle at Thanksgiving<a href="#uzzle-at-thanksgiving" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block&rsquo;s four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.</p>
 <img src="uzzleexample.png" alt="An Uzzle pattern card and the five blocks" style="width: 60%; display: block; margin: 1rem auto;">
 <p>Since we have five colors, we can determine how many possible combinations and repeat patterns there are. With five colors, there are $\binom{5}{2}=10$ pairs of distinct colors, plus $5$ doubles (RR, PP, etc.), for $15$ combinations in total. Note that we have &ldquo;commutativity&rdquo; on the blocks: flipping a block end-to-end turns RG into GR. Five blocks with four faces each gives $20$ faces, so exactly $5$ combinations show up twice: RP, RO, PG, OB, and BG. Here&rsquo;s the full set:</p>

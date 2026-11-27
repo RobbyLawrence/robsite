@@ -7,7 +7,7 @@ math = true
 
 {{< katex >}}
 
-### Another fun game
+### Uzzle at Thanksgiving
 Uzzle is a puzzle game made of wooden blocks and a deck of pattern cards. Each card shows a $4\times3$ grid, where every cell is either blank or one of five colors: red, purple, orange, blue, or green. The player has five rectangular blocks, each covering a $2\times1$ area, and each of a block's four long faces shows a pair of colors. The goal is to place all five blocks, horizontally or vertically, so that the faces showing on top match the card exactly.
 
 <img src="uzzleexample.png" alt="An Uzzle pattern card and the five blocks" style="width: 60%; display: block; margin: 1rem auto;">
