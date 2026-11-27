@@ -2,62 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://www.robbylawrence.com/</loc>
     <lastmod>2026-11-27T12:55:02-05:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://www.robbylawrence.com/posts/</loc>
     <lastmod>2026-11-27T12:55:02-05:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/uzzle/</loc>
+    <loc>https://www.robbylawrence.com/posts/uzzle/</loc>
     <lastmod>2026-11-27T12:55:02-05:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/enclose-horse/</loc>
+    <loc>https://www.robbylawrence.com/posts/enclose-horse/</loc>
     <lastmod>2026-08-22T14:36:28-04:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/stochastic-programming/</loc>
-    <lastmod>2026-05-04T09:43:18-04:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/jigsaw-sudoku/</loc>
+    <loc>https://www.robbylawrence.com/posts/jigsaw-sudoku/</loc>
     <lastmod>2026-04-13T15:15:12-04:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/hello-world/</loc>
+    <loc>https://www.robbylawrence.com/posts/hello-world/</loc>
     <lastmod>2026-04-13T00:00:00+00:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://www.robbylawrence.com/authors/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://www.robbylawrence.com/categories/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/jigsaw/</loc>
+    <loc>https://www.robbylawrence.com/jigsaw/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://www.robbylawrence.com/series/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/set/</loc>
+    <loc>https://www.robbylawrence.com/set/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://www.robbylawrence.com/tags/</loc>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url>

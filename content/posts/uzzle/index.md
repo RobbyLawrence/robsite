@@ -1,6 +1,6 @@
 +++
 date = '2026-11-27T12:55:02-05:00'
-draft = true
+draft = false
 title = 'Solving Uzzle'
 math = true
 +++
